@@ -1,0 +1,92 @@
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Catlog - 고양이와 함께하는 다이어리</title>
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+          body {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+              background: linear-gradient(135deg, #FAF7F0 0%, #F5E6D3 100%);
+              min-height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 20px;
+          }
+          .container {
+              max-width: 600px;
+              background: white;
+              padding: 60px 40px;
+              border-radius: 30px;
+              box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+              text-align: center;
+          }
+          h1 {
+              font-size: 48px;
+              color: #8B6F47;
+              margin-bottom: 20px;
+          }
+          p {
+              font-size: 18px;
+              color: #6B5D4F;
+              line-height: 1.6;
+              margin-bottom: 30px;
+          }
+          .cat-emoji {
+              font-size: 80px;
+              margin-bottom: 20px;
+          }
+          .badges {
+              display: flex;
+              gap: 15px;
+              justify-content: center;
+              margin-top: 40px;
+          }
+          .badge {
+              display: inline-block;
+              padding: 12px 24px;
+              background: #8B6F47;
+              color: white;
+              text-decoration: none;
+              border-radius: 12px;
+              font-weight: 600;
+              transition: transform 0.2s;
+          }
+          .badge:hover {
+              transform: translateY(-2px);
+          }
+          footer {
+              margin-top: 40px;
+              padding-top: 20px;
+              border-top: 1px solid #F5E6D3;
+              color: #8E8E8E;
+              font-size: 14px;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="cat-emoji">🐱📔</div>
+          <h1>Catlog</h1>
+          <p>고양이와 함께하는 특별한 다이어리</p>
+          <p>일상을 기록하고, 고양이 친구들과 함께 특별한 순간을 공유하세요.</p>
+
+          <div class="badges">
+              <!-- Google Play 링크 (출시 후 업데이트) -->
+              <a href="#" class="badge">📱 Google Play</a>
+              <!-- App Store 링크 (출시 후 업데이트) -->
+              <a href="#" class="badge">🍎 App Store</a>
+          </div>
+
+          <footer>
+              © 2025 Catlog. All rights reserved.
+          </footer>
+      </div>
+  </body>
+  </html>
