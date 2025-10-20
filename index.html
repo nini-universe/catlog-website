@@ -4,6 +4,21 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Catlog - 고양이와 함께하는 다이어리</title>
+      <script>
+        // 자동 언어 감지 및 리다이렉션
+        const userLang = navigator.language || navigator.userLanguage;
+        const currentPage = window.location.pathname.split('/').pop();
+    
+        // 이미 특정 언어 페이지에 있으면 리다이렉션 하지 않음
+        if (currentPage === '' || currentPage === 'index.html') {
+            if (userLang.startsWith('en')) {
+                window.location.href = 'index-en.html';
+            } else if (userLang.startsWith('ja')) {
+                window.location.href = 'index-ja.html';
+            }
+            // 한국어는 기본값이므로 리다이렉션 불필요
+        }
+      </script>
       <style>
           * {
               margin: 0;
