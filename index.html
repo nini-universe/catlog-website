@@ -149,14 +149,14 @@
                 App Store에서 다운로드
             </a>
 
-            <a href="#"
+            <a href="https://play.google.com/store/apps/details?id=com.catlog.catlog"
                class="store-button android disabled"
                id="androidButton"
                onclick="return false;">
                 <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
                 </svg>
-                Google Play (준비 중)
+                Google Play에서 다운로드
             </a>
         </div>
 
@@ -186,7 +186,7 @@
         function redirectToStore() {
             const device = detectDevice();
             const iosUrl = 'https://apps.apple.com/kr/app/%EC%BA%A3%EB%A1%9C%EA%B7%B8-%EA%B3%A0%EC%96%91%EC%9D%B4-%EB%8B%A4%EC%9D%B4%EC%96%B4%EB%A6%AC/id6752438401';
-            const androidUrl = 'https://play.google.com/store/apps/details?id=com.catlog.catlog'; // TODO: 실제 URL로 변경 필요
+            const androidUrl = 'https://play.google.com/store/apps/details?id=com.catlog.catlog';
 
             // 모바일 디바이스일 경우 자동 리다이렉트
             if (device === 'ios') {
@@ -199,16 +199,12 @@
                     window.location.href = iosUrl;
                 }, 500);
             } else if (device === 'android') {
-                // Android는 아직 준비 중이므로 버튼만 표시
-                // 나중에 릴리즈 되면 아래 주석을 해제하세요
-                /*
                 document.getElementById('redirectMessage').classList.remove('hidden');
                 document.getElementById('buttonGroup').classList.add('hidden');
 
                 setTimeout(() => {
                     window.location.href = androidUrl;
                 }, 500);
-                */
             }
             // 데스크톱은 버튼 표시
         }
