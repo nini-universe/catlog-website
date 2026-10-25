@@ -128,6 +128,7 @@
             display: none;
         }
     </style>
+    <script src="/analytics.js"></script>
 </head>
 <body>
     <div class="container">
@@ -172,9 +173,9 @@
         // 이미 특정 언어 페이지에 있으면 리다이렉션 하지 않음
         if (currentPage === '' || currentPage === 'index.html') {
             if (userLang.startsWith('en')) {
-                window.location.href = 'index-en.html';
+                window.location.href = 'index-en.html' + window.location.search; // utm 등 쿼리 유지
             } else if (userLang.startsWith('ja')) {
-                window.location.href = 'index-ja.html';
+                window.location.href = 'index-ja.html' + window.location.search; // utm 등 쿼리 유지
             }
             // 한국어는 기본값이므로 리다이렉션 불필요
         }
@@ -196,6 +197,12 @@
             return 'desktop';
         }
 
+        // GA(/analytics.js)가 이벤트를 보낸 뒤 이동 — 스크립트가 안 올라왔으면 그냥 0.5초 뒤 이동
+        function goStore(url) {
+            if (window.niniStoreGo) niniStoreGo(url);
+            else setTimeout(() => { window.location.href = url; }, 500);
+        }
+
         function redirectToStore() {
             const device = detectDevice();
             const iosUrl = 'https://apps.apple.com/kr/app/%EC%BA%A3%EB%A1%9C%EA%B7%B8-%EA%B3%A0%EC%96%91%EC%9D%B4-%EB%8B%A4%EC%9D%B4%EC%96%B4%EB%A6%AC/id6752438401';
@@ -208,16 +215,12 @@
                 document.getElementById('buttonGroup').classList.add('hidden');
 
                 // 0.5초 후 리다이렉트
-                setTimeout(() => {
-                    window.location.href = iosUrl;
-                }, 500);
+                goStore(iosUrl);
             } else if (device === 'android') {
                 document.getElementById('redirectMessage').classList.remove('hidden');
                 document.getElementById('buttonGroup').classList.add('hidden');
 
-                setTimeout(() => {
-                    window.location.href = androidUrl;
-                }, 500);
+                goStore(androidUrl);
             }
             // 데스크톱은 버튼 표시
         }
