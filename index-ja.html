@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="キャットログ - 猫と一緒の日記アプリ">
-    <title>キャットログ - 猫日記</title>
+    <meta name="description" content="猫と一緒の、やさしい日記アプリ「キャットログ（Catlog）」。毎日を記録して友だちと共有し、自分だけの猫部屋を飾りましょう。iOS・Android対応の無料アプリ。">
+    <title>キャットログ - 猫と一緒に書く日記・ダイアリーアプリ</title>
+    <!-- 검색 — 언어마다 따로 된 페이지. 한국어가 기본 -->
+    <link rel="canonical" href="https://nini-universe.github.io/catlog-website/index-ja.html">
+    <link rel="alternate" hreflang="ko" href="https://nini-universe.github.io/catlog-website/">
+    <link rel="alternate" hreflang="en" href="https://nini-universe.github.io/catlog-website/index-en.html">
+    <link rel="alternate" hreflang="ja" href="https://nini-universe.github.io/catlog-website/index-ja.html">
+    <link rel="alternate" hreflang="x-default" href="https://nini-universe.github.io/catlog-website/">
+    <!-- 링크 미리보기 (카카오톡·페이스북·X 등) — 이미지 주소는 반드시 절대 주소 -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nini Universe">
+    <meta property="og:url" content="https://nini-universe.github.io/catlog-website/index-ja.html">
+    <meta property="og:title" content="キャットログ - 猫と一緒に書く日記・ダイアリーアプリ">
+    <meta property="og:description" content="毎日を記録して友だちと共有し、自分だけの猫部屋を飾りましょう。">
+    <meta property="og:image" content="https://nini-universe.github.io/catlog-website/catlog.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/png" href="catlog.png">
+    <link rel="apple-touch-icon" href="catlog.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "キャットログ",
+      "alternateName": ["캣로그", "Catlog"],
+      "description": "猫と一緒の、やさしい日記アプリ「キャットログ（Catlog）」。毎日を記録して友だちと共有し、自分だけの猫部屋を飾りましょう。iOS・Android対応の無料アプリ。",
+      "url": "https://nini-universe.github.io/catlog-website/index-ja.html",
+      "image": "https://nini-universe.github.io/catlog-website/catlog.png",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS, Android",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "inLanguage": "ja",
+      "author": { "@type": "Organization", "name": "Nini Universe", "url": "https://nini-universe.github.io/" },
+      "sameAs": [
+        "https://apps.apple.com/app/id6752438401",
+        "https://play.google.com/store/apps/details?id=com.catlog.catlog"
+      ]
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -42,6 +82,13 @@
             color: #8B6F47;
             font-size: 28px;
             margin-bottom: 10px;
+        }
+
+        .desc {
+            color: #8A7A6A;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: -16px 0 30px;
         }
 
         .subtitle {
@@ -117,6 +164,7 @@
         <img src="catlog.png" alt="Catlog" class="logo">
         <h1>キャットログ</h1>
         <p class="subtitle">猫と一緒の日記</p>
+        <p class="desc">猫と一緒の、やさしい日記アプリ。<br>毎日を記録して友だちと共有し、<br>自分だけの猫部屋を飾りましょう。</p>
 
         <div id="redirectMessage" class="redirect-message hidden">
             アプリストアへ移動中...
@@ -148,6 +196,9 @@
     </div>
 
     <script>
+        // 검색엔진 봇은 이 페이지를 그대로 읽게 둔다
+        const isBot = /googlebot|google-inspectiontool|bingbot|yeti|daumoa|duckduckbot|applebot|yandex|baiduspider|slurp|crawler|spider/i.test(navigator.userAgent);
+
         function detectDevice() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
@@ -169,6 +220,7 @@
         }
 
         function redirectToStore() {
+            if (isBot) return; // 검색엔진 봇(구글 모바일 봇 UA에 Android가 들어 있다)은 스토어로 보내지 않는다
             const device = detectDevice();
             const iosUrl = 'https://apps.apple.com/kr/app/%EC%BA%A3%EB%A1%9C%EA%B7%B8-%EA%B3%A0%EC%96%91%EC%9D%B4-%EB%8B%A4%EC%9D%B4%EC%96%B4%EB%A6%AC/id6752438401';
             const androidUrl = 'https://play.google.com/store/apps/details?id=com.catlog.catlog';
